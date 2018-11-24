@@ -9,7 +9,8 @@ PHPとMySQLを使った掲示板です。
 
 編集、削除はどちらも送信時に設定したパスワードを入力することで実行できます。
 
-##　その他
+## その他
+
 途中ハッシュについて<https://qiita.com/h1y0r1n/items/a719d308503c28712287>から
 ```php:sample
    // $strから乱数で文字列を取得して、$saltにcryptのsaltを生成する
@@ -26,5 +27,5 @@ PHPとMySQLを使った掲示板です。
    // ハッシュ化
     $hashedPassword = crypt($password, $salt);
 ```
-引用させてもらいました。
+の部分を引用させてもらいました。
 
