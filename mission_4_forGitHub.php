@@ -45,6 +45,7 @@
 	if((isset($comment))&&(isset($name))&&(!($comment===''))&&(!($name===''))&&(isset($password))&&(!($password===''))){
 			if(preg_match('/^[a-zA-Z0-9]{1,8}+$/',$password)){
 				//ハッシュする
+		//https://qiita.com/h1y0r1n/items/a719d308503c28712287参考ここから		
 				// $strから乱数で文字列を取得して、$saltにcryptのsaltを生成する
 				 $str  = array_merge(range('a', 'z'), range('0', '9'), range('A', 'Z'),array(".","/"));
 				  // ランダムな文字列を22文字取得
@@ -55,6 +56,7 @@
 				 	$salt .= $str[rand(0, count($str)-1)];
 				 }
 				$hashedPassword = crypt($password, $salt);
+		//https://qiita.com/h1y0r1n/items/a719d308503c28712287参考ここまで
 				//hashのsaltとパスワードを送信する
 				$time=date('Y-m-d H:i:s');
 				if($edit=="false"){
